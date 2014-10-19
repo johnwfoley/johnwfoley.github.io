@@ -1,0 +1,72 @@
+body {
+ background-color: #f0f0f0;
+ font-family: times;
+ padding-left: 0%;
+}
+
+a {
+  text-decoration: none
+}
+
+header {
+
+  width: auto;
+  background-color: lightgreen;
+  padding: 0 ;
+
+}
+
+nav {
+  text-align: center;
+  font-size: 1em;
+  width: auto;
+  background: lightblue;
+
+}
+
+nav ul li {
+  margin: 0 40;
+  display: inline-block;
+}
+
+#wrapper {
+  margin-left: 10px;
+
+
+}
+
+h1 {
+  margin-left: 10px;
+  padding-top: 10px;
+  font-size: 1.2em;
+  font-weight: 200;
+
+}
+
+h2 {
+  margin-top: -10px;
+  margin-left: 10px;
+  font-size: 1.1em;
+  font-weight: 200;
+}
+
+contact {
+  width: 70%;
+  float: left;
+}
+
+social {
+  width: 30%;
+  float: right;
+}
+
+copryright {
+clear: both;
+}
+
+copyright h4 {
+  margin-right: 20px;
+  font-size: .7em;
+  font-weight: 100;
+  text-align: right;
+}
