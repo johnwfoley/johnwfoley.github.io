@@ -32,7 +32,10 @@ nav ul li {
 #wrapper {
   margin-left: 10px;
 
+}
 
+article {
+  text-align: center;
 }
 
 h1 {
