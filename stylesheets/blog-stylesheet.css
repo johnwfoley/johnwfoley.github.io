@@ -4,16 +4,14 @@ body {
  padding-left: 0%;
 }
 
-a {
+ul, a {
   text-decoration: none
 }
 
 header {
-
   width: auto;
   background-color: lightgreen;
-  padding: 0 ;
-
+  padding: 0;
 }
 
 nav {
@@ -31,12 +29,19 @@ nav ul li {
 
 #wrapper {
   margin-left: 10px;
-
+  text-align: center;
 }
 
 article {
-  text-align: center;
+  margin-left: 50px;
+  text-align: left;
+  width: 80%;
 }
+
+article li {
+  margin-top: 5;
+}
+
 
 h1 {
   margin-left: 10px;
