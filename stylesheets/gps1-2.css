@@ -1,0 +1,18 @@
+body {
+    text-align:center;
+    font-family: 'Titillium Web', sans-serif;
+      }
+
+.front_page {
+    background-color: green;
+    height: 1.50em;
+
+}
+
+.front_page_lists li {
+   list-style: none;
+}
+
+.no-style {
+  text-decoration: none;
+}
