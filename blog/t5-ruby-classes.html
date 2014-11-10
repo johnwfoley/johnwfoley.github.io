@@ -1,0 +1,122 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>A club that would have me in it</title>
+      <link rel="stylesheet" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+
+<body>
+    <header>
+    <h1>John Foley</h1>
+    <h2>Front End Nobody..</h2>
+    <nav>
+      <ul>
+        <li><a href="../index.html">About ME</a></li>
+        <li><a href="../blogs.html">Blog</a></li>
+        <li><a href="../proj.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div id="wrapper">
+
+<article>
+<h1> I can't Believe this Didn't Exist Already </h1>
+
+<p> In week three, I think, we had the challenge where we wrote the method for Factorial. That was the first time it occurred to me, "Hey I bet, with all these fancy Ruby methods, there is probably already a method that will do factorializing (probably not a word but I'm going with it) for me!"</p>
+
+<p> A little disappointing to see that there wasn't but now it stands as a useful example for building new methods into classes.</p>
+<p>Classes, as we all know now, are Object factories. Where do all the little integers come from? Integer heaven?
+  No. the Integer Class. And the Arrays, and the Hashes and the floats and pretty much everything that isn't  a method? from; the Array class, the Hash.class and the Float class.
+
+  <p> We also know we can create our own classes:</p>
+  <div class="code">
+<span class="ReferenceType">class</span>&nbsp;Shop<br />
+end
+</div>
+<p> There you're done, new class. Shop. Easy-peeesy. Adding methods to your new class is also simple:</p>
+
+<div class="code">
+<span class="ReferenceType">class</span>&nbsp;Shop<br />
+<br />
+&nbsp;&nbsp;def&nbsp;my_cool_new_method<br />
+&nbsp;&nbsp;&nbsp;&nbsp;your&nbsp;<span class="Keyword">new</span>&nbsp;method&nbsp;stuff<br />
+&nbsp;&nbsp;end<br />
+<br />
+<br />
+end
+</div>
+
+</p> You can also open existing class and add methods to them. Let's put factorial into Integer.</p>
+<p> First let's open the Integer class just like before:</p>
+
+<div class="code">
+<span class="ReferenceType">class</span>&nbsp;Integer<br />
+<br />
+end
+</div>
+
+<p and now paste in the code from factorial.</p>
+
+<div class="code">
+<span class="ReferenceType">class</span>&nbsp;Integer<br />
+<br />
+def&nbsp;factorial<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;=&nbsp;1<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;=&nbsp;self<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num.downto(1)&nbsp;<span class="Statement">do</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total&nbsp;=&nbsp;total&nbsp;*&nbsp;num<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;=&nbsp;num&nbsp;-&nbsp;1<br />
+&nbsp;&nbsp;&nbsp;&nbsp;end<br />
+&nbsp;&nbsp;&nbsp;&nbsp;total<br />
+end<br />
+<br />
+end
+</div>
+
+<p>Now whenever you are dealing with an integer you can call .factorial as a method and get it.</p>
+
+
+<p>Okay I should point out that we have not changed ALL OF RUBY. You have to paste this change you want to make about the class Integer, into any Ruby program where you want it to work.</p>
+
+
+
+
+
+
+
+
+ </article>
+</wrapper>
+
+
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="../index.html">About ME</a></li>
+        <li><a href="../blogs.html">Blog</a></li>
+        <li><a href="../proj.html">Projects</a></li>
+      </ul>
+    </nav>
+    <contact>
+      <a href="mailto:sprockety@gmail.com">sprockety@gmail.com</a>
+    </contact
+
+     <social>
+      <a href="https://www.twitter.com/sprocket"><img src=../img/twit.png></a>
+      <a href="https://github.com/johnwfoley/"><img src=../img/git.png></a>
+    </social>
+
+    <copyright>
+      <h4> &copy;john foley 2014 i guess.
+    </copyright>
+
+  </footer>
+
+
+
+</body>
+</html>
