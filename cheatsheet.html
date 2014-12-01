@@ -1,0 +1,131 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>I'll be Back</title>
+      <link rel="stylesheet" href="stylesheets/blog-stylesheet.css">
+</head>
+
+
+<body>
+    <header>
+    <h1>John Foley</h1>
+    <h2>Front End Nobody..</h2>
+    <nav>
+      <ul>
+        <li><a href="../index.html">About ME</a></li>
+        <li><a href="../blogs.html">Blog</a></li>
+        <li><a href="../proj.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div id="wrapper">
+
+<article>
+
+<h1>Javascript Reminders</h1>
+<h1>Dots and Brackets</h1>
+<h1>The important thing to remember here is mixing bracketed and dot notation to get to values in objects.</h1>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> Person(name, age) {
+    <span style="color: #008800; font-weight: bold">this</span>.name <span style="color: #333333">=</span> name;
+    <span style="color: #008800; font-weight: bold">this</span>.age <span style="color: #333333">=</span> age;
+    };
+
+<span style="color: #008800; font-weight: bold">var</span> family <span style="color: #333333">=</span> [];
+
+<span style="color: #008800; font-weight: bold">var</span> alice <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Person(<span style="background-color: #fff0f0">&quot;alice&quot;</span>, <span style="color: #0000DD; font-weight: bold">40</span>);
+<span style="color: #008800; font-weight: bold">var</span> bob <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Person(<span style="background-color: #fff0f0">&quot;bob&quot;</span>, <span style="color: #0000DD; font-weight: bold">42</span>);
+<span style="color: #008800; font-weight: bold">var</span> michelle <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Person(<span style="background-color: #fff0f0">&quot;michelle&quot;</span>, <span style="color: #0000DD; font-weight: bold">8</span>);
+<span style="color: #008800; font-weight: bold">var</span> timmy <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Person(<span style="background-color: #fff0f0">&quot;timmy&quot;</span>, <span style="color: #0000DD; font-weight: bold">6</span>);
+
+<span style="color: #888888">// Now we can make an array of people</span>
+
+family <span style="color: #333333">=</span> [alice, bob, michelle, timmy];
+
+
+<span style="color: #888888">// loop through our new array</span>
+
+<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #008800; font-weight: bold">var</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span>family.length; i<span style="color: #333333">++</span>){
+    console.log(family[i].name);
+};
+</pre></div>
+
+<h1>"This" intro</h1>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">// here we define our method using &quot;this&quot;, before we even introduce bob</span>
+<span style="color: #008800; font-weight: bold">var</span> setAge <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span> (newAge) {
+  <span style="color: #008800; font-weight: bold">this</span>.age <span style="color: #333333">=</span> newAge;
+};
+<span style="color: #888888">// now we make bob</span>
+<span style="color: #008800; font-weight: bold">var</span> bob <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Object</span>();
+bob.age <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">30</span>;
+<span style="color: #888888">// and down here we just use the method we already made</span>
+bob.setAge <span style="color: #333333">=</span> setAge;
+
+<span style="color: #888888">// change bob&#39;s age to 50 here</span>
+bob.setAge(<span style="color: #0000DD; font-weight: bold">50</span>)
+
+<span style="color: #008800; font-weight: bold">var</span> addAgetoHandedNumber <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(number) {
+    <span style="color: #008800; font-weight: bold">this</span>.age <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.age <span style="color: #333333">+</span> number;
+};
+
+ob <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Object</span>();
+ob.age <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">43</span>;
+console.log(ob.age);
+ob.addAgetoHandedNumber <span style="color: #333333">=</span> addAgetoHandedNumber;
+ob.addAgetoHandedNumber(<span style="color: #0000DD; font-weight: bold">7</span>);
+console.log(ob.age);
+</pre></div>
+
+
+
+
+<h1>FIZZBUZZ!</h1>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span>(<span style="color: #008800; font-weight: bold">var</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>; i <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">20</span>; i<span style="color: #333333">++</span>){
+
+    <span style="color: #008800; font-weight: bold">if</span>(i <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">15</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>){
+        console.log(<span style="background-color: #fff0f0">&quot;fizzbuzz&quot;</span>)}
+    <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(i <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">5</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>){
+        console.log(<span style="background-color: #fff0f0">&quot;buzz&quot;</span>)}
+    <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(i <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">3</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>){
+        console.log(<span style="background-color: #fff0f0">&quot;fizz&quot;</span>)}
+    <span style="color: #008800; font-weight: bold">else</span> console.log(i)
+};
+</pre></div>
+
+
+
+ </article>
+</wrapper>
+
+
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="../index.html">About ME</a></li>
+        <li><a href="../blogs.html">Blog</a></li>
+        <li><a href="../proj.html">Projects</a></li>
+      </ul>
+    </nav>
+    <contact>
+      <a href="mailto:sprockety@gmail.com">sprockety@gmail.com</a>
+    </contact
+
+     <social>
+      <a href="https://www.twitter.com/sprocket"><img src=img/twit.png></a>
+      <a href="https://github.com/johnwfoley/"><img src=img/git.png></a>
+    </social>
+
+    <copyright>
+      <h4> &copy;john foley 2014 i guess.
+    </copyright>
+
+  </footer>
+
+
+
+</body>
+</html>
