@@ -1,0 +1,138 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>I'll be Back</title>
+      <link rel="stylesheet" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+
+<body>
+    <header>
+    <h1>John Foley</h1>
+    <h2>Front End Nobody..</h2>
+    <nav>
+      <ul>
+        <li><a href="../index.html">About ME</a></li>
+        <li><a href="../blogs.html">Blog</a></li>
+        <li><a href="../proj.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div id="wrapper">
+
+<article>
+
+<p>When I first saw the Terminator, I was deeply troubled by the time paradox I watch a lot of Dr. Who as a kid so I was pretty familiar with the basics of time travel. But Terminator was the first one with a ... wait this can never happen.</p>
+
+
+
+<p>Becasue the thing with Time Paradoxes is, at some point there must have been a "First Time Through".</p>
+
+<p>At some point there must have been a Sarah Connor who got pregnant and had a boy John Connor who's dad WASN'T Kyle Reese, but who grew up to survive the war with the machines, and lead humanity to victory and send Kyle Back to meet Sarah Conner.</p>
+<p> And THAT's where the paradox starts.<p/>
+
+  <p> So young me was always facinated by that first time through. What we shall call the Prime Iteration. Becasue after that everything changes.</p>
+  <p>And that is all anyone seems to care about.</p>
+
+<h1>And here's the segue..<h1>
+  <h2>spoiler alert: there is no segue.</h2>
+
+<h1>Recursion</h1>
+
+<blockquote>It is perfectly okay for a function to call itself, as long as it takes care not to overflow the stack. <br>
+-- Marijn Haverbeke, Eloquent Jvascript</blockquote>
+
+<blockquote>A function that calls itself from inside itself is a slap in the face to the laws of nature, and I wouldn't let one date my sister.<br>
+-- Me, this Blog, right now.</blockquote>
+
+
+<p>Here take a look at this.</p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">function power(base, exponent) {
+  <span style="color: #008800; font-weight: bold">if</span> (exponent <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span>)
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>;
+  <span style="color: #008800; font-weight: bold">else</span>
+    <span style="color: #008800; font-weight: bold">return</span> base <span style="color: #333333">*</span> power(base, exponent <span style="color: #333333">-</span> <span style="color: #0000DD; font-weight: bold">1</span>);
+}
+
+console<span style="color: #333333">.</span>log(power(<span style="color: #0000DD; font-weight: bold">2</span>, <span style="color: #0000DD; font-weight: bold">4</span>));
+<span style="color: #000000; background-color: #fff0ff">//</span> <span style="color: #FF0000; background-color: #FFAAAA">=></span> <span style="color: #0000DD; font-weight: bold">16</span>
+</pre></div>
+
+
+
+<p>Here is a power function, uh, function.<br>
+but you can see in the 'else' segment of the if statement<br> the function, 'power' is.. is
+<em>CALLING ITSELF!</em></p>
+
+<p> This raises new and troubling questions</p>
+
+<p>How do you call a function from inside a function. By virtue of the fact that you are calling from inside it.. by definition you aren't done defining it. How can you call it before you are done defining it? Also why?</p>
+
+<p>If every time this thing iterates its going to call itself again.. Its turtles all the way down, it can never end.</p>
+
+<p>Now I would really like to talk about Chaos by James Gleik, and spend a moment on Infinite sets in bounded systems, but that's just me showing off, instead I will drag us back to my Terminator obsession.</p>
+
+<p>There had to be a Prime Iteration, a first time through the loop just to get it started.<br> I don't need to tell you recursion is a bit tricky to get right. Lots of opportunity to start an infinite loop.</p>
+
+<p>So for this first time through they set up some ground rules. In this function, right at the start they create this escape clause<br>with the <b>if</b> statement: <b>if (exponent == 0) return 0;</b></p>
+
+<p>Okay now we have a good feeling that this won't last forever. Not entirely sure why not, but a good guess is, someplace, in a little bit, something will be decrementing <b>exponent</b>. And sure enough, there it is in the <b>else</b> half of the statement. In that unholy call to <b>power</b>. But at least its there, so no matter how off-the-rails things go we know that every time this function runs through its little loop, even though its calling itself, <b>exponent</b> is going to be decremented a little each time and eventually <b>exponent</b> will = 0 and get the hell out of there.</p>
+
+<h1>Great so now we know how it ends</h1>
+<p>This the part where it get a little weird visually. Let us go through each iteration and see what is happening. Starting with the given <b>base</b> and <b>exponent</b>: 2 and 4.</p>
+
+<p>First time through:  <b>base = 2</b>, <b>exponent = 4</b></p>
+<p>2 * power( 2, exponent - 1)   <== <b>exponent = 4</b> but now they've called power again so</p>
+<p>----> 2 * power( 2, exponent - 1) <== <b>exponent = 3</b> but here's power again so</p>
+<p>----> ---->2 * power( 2, exponent - 1) <== <b>exponent = 2</b> and power again so</p>
+<p>----> ----> ---->2 * power( 2, exponent - 1 ) <== but <em>now</em> <b>Exponent = 1</b> and this call to power passes exponent - 1, so 0.
+AND have that escape clause in the beginning that returns 0 if exponent == 1.</p>
+
+<p> Now depending on how you look at it, and whichever way you look at it is fine. We have recursed, thru all the iterations available to us as they were set up by that first If statement.</p>
+
+  <blockquote>Effectively you get: (2 * (2 * (2 * (2 * 1)))) Where the innermost set of parentheses corresponds to the last value of exponent(0)
+
+  <p>And now you can back out and run the function and get the result 12.
+  uh ,16 actually , but the important thing is to understand what's happening.</p>
+
+
+
+
+
+
+
+
+
+ </article>
+</wrapper>
+
+
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="../index.html">About ME</a></li>
+        <li><a href="../blogs.html">Blog</a></li>
+        <li><a href="../proj.html">Projects</a></li>
+      </ul>
+    </nav>
+    <contact>
+      <a href="mailto:sprockety@gmail.com">sprockety@gmail.com</a>
+    </contact
+
+     <social>
+      <a href="https://www.twitter.com/sprocket"><img src=../img/twit.png></a>
+      <a href="https://github.com/johnwfoley/"><img src=../img/git.png></a>
+    </social>
+
+    <copyright>
+      <h4> &copy;john foley 2014 i guess.
+    </copyright>
+
+  </footer>
+
+
+
+</body>
+</html>
